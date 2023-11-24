@@ -1,0 +1,48 @@
+first look for acquisitions from crunchbase.com for large scale bounty
+
+
+second, grab ASNs from bgp.he.net
+
+Scan asn with amass,,, amass intel --asn num
+
+do a reverse whois on seed domain/ whoxy.com
+you can automate using DOMLINK
+
+check tech with builtwith
+
+next thing is to grab the copyright text and find more subdomains using google dork "2023 indeed inc" -www.indeed.com
+
+use automation for shodan to find more subdomains
+
+
+SUBDOMAIN ENUM
+jslinked discovery using burp
+set scope-use advanced scope
+
+grab sitemap, scan ans crawl
+scan config-- fastest crawler, don't stop
+resource pool- a lot, 50
+
+after spidering for root domains
+select all hosts from sitemap
+go to engagement tools on pro only
+analyse targets
+save result as html
+copy the hosts from target section
+
+AUTOMATION
+gospider
+hakrawler
+
+subdomainizer- used in analyzing js.
+find subdomains referenced in js files.
+find cloud services referenced in js files.
+use shannon entropy formula to find potentially sensitive items in js.
+
+it will take a single page and scan for js files to analyze
+
+subscraper-- just for subdomains
+
+in burp
+go to engagements, click search, search .js
+copy all urls, parse to subdomainizer

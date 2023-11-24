@@ -1,0 +1,8 @@
+content discovery
+ffuf
+dirsearch---python3 200 threads
+dirbuster
+
+wordlists
+raft wordlist--45k lines 
+400k lines

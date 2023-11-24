@@ -1,0 +1,5 @@
+HTML INJECTION
+html injection can lead to webpage poisoning
+html injection on a comment form
+can lead to a url redirection
+<meta http-equiv="refresh" content=0; url=http://google.com" />

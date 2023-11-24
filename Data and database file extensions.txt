@@ -1,0 +1,31 @@
+Data and database file extensions
+
+A data file could be any file, but for this list, we've listed the most common data files that relate to data used for a database, errors, information, importing, and exporting.
+
+    .csv - Comma separated value file
+    .dat - Data file
+    .db or .dbf - Database file
+    .log - Log file
+    .mdb - Microsoft Access database file
+    .sav - Save file (e.g., game save file)
+    .sql - SQL database file
+    .tar - Linux / Unix tarball file archive
+    .xml - XML file
+
+
+Executable file extensions
+java archive
+
+The most common executable file are files ending with the .exe file extension. However, other files can also be run by themselves or with the aid of an interpreter.
+
+    .apk - Android package file
+    .bat - Batch file
+    .bin - Binary file
+    .cgi or .pl - Perl script file
+    .com - MS-DOS command file
+    .exe - Executable file
+    .gadget - Windows gadget
+    .jar - Java Archive file
+    .msi - Windows installer package
+    .py - Python file
+    .wsf - Windows Script File

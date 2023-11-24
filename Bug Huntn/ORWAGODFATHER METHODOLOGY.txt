@@ -1,0 +1,214 @@
+ORWAGODFATHER METHODOLOGY
+*.hypr.com
+
+1) content discovery: Ffuf or dirsearch
+
+2) wordlists: Random Robbie Word list github
+
+3) SUBDOMAIN ENUM: Amass
+a) For List of domains==> amass enum -passive -norecursive -noalts -df list-domains.txt -o subs.txt
+
+!!) amass enum -passive -norecursive -noalts -df domains.txt -o subdomains.txt
+
+b) For Senile domain==> amass enum -passive -norecursive -noalts -d domain -o subs.txt
+
+4) httpx, httprobe & Nmap
+A)   cat subs.txt | httpx -o live-subs.txt
+
+
+B)  cat sub.txt | httprobe -p http:81 -p http:3000 -p https:3000 -p http:3001 -p https:3001 -p http:8000 -p http:8080 -p https:8443 -p https:10000 -p http:9000 -p https:9443 -c 50 | tee live-subs2.txt
+
+
+C). subfinder -d target.com -silent| httpx -title -tech-detect -status-code
+
+D) httpx -screenshot -u https://example.com
+
+
+5))PORT Scanning
+Naabu
+
+naabu -list newsubs.txt -p - -exclude-ports 80,443,8080,22,25 -o newegg_port_result.txt
+
+Also send Subs-list to Nmap for port scanning
+
+***Nmap i run it on VPS because take lot time
+
+nmap -sV -iL subdomains.txt -oN scaned-port.txt --script=vuln
+
+
+Optional>>> masscan -p1-65355 -iL $ipfile —-max-rate 1800 -oG $outputFile.log
+
+NB: masscan only takes ips, so we have to use dnmasscan to get ips
+
+
+5) Wappalyzer
+
+6) Burp Pro With These Extensions
+Collaborator Everywhere
+XSS Validator
+Wsdler
+.NET Beautifier
+Bypass WAF
+J2EEScan
+Param Miner
+Wayback Machine
+JS Link Finder
+Upload Scanner
+Nucleus Burp Extension
+Software Vulnerability Scanner
+Active Scan++
+
+Github DORKING>>> org:facebookresearch language:python .php
+
+So after that i Spider the Full host and and fuzz for php using php word list and after that Active Scan on Burp for ALL the Post Request
+
+Keep the Maximum insertion point per base request 10`
+
+*AUTHENTICATION BYPASS*
+but on burp when visit one 
+will redirect but the Content-Length of redirect response so big 6443
+After looking in the response he found out in this 302 response, the panel was without any Authentication. in the 302 response content
+
+#Repro Steps
+1. IN burp match and replace add this:
+type: response header
+match : HTTP/1.1 302 Found
+replace: HTTP/1.1 200 ok
+__
+type: response header
+match : Location: ../login/?redirect=//location/?5
+replace:
+2. now go to domian//location/?5
+BooM
+4. when you done you can report
+
+
+SHODAN
+
+2 SHODAN IP And SSTI To RCE
+Started recon for Ip belongs for Facebook
+
+the good dork you can use in these case
+
+if you looking for domains or Ip belong for program
+
+Org:"FaceBook Inc." without 200 dont need live Ip in these case
+
+if you looking for cool subs or Ip on the domain
+
+Ssl.cert.subject.CN:"facebook.com" 200
+
+so found a interesting Ip that include port 10000 but not working
+
+so i scan that Ip on Nmap Nmap -sV ip
+
+its show Port 8443 Open
+
+
+3 Privilege Escalation
+here i visit crt.sh to tack about 5 interesting domains
+
+https://crt.sh/?q=Facebook+Inc.
+but for subdomains gathering i dont wanna the normal way
+
+i fuzz for sub domains with a good and big word list i made it
+
+you can also made one for you
+
+after that filtered to Live using httprobe
+
+cat sub.txt | httprobe -p http:81 -p http:3000 -p https:3000 -p http:3001 -p https:3001 -p http:8000 -p http:8080 -p https:8443 -p https:10000 -p http:9000 -p https:9443 -c 50 | tee live-subs2.txt
+
+so found here domain run on Port 10000
+
+so when i visit it was a interesting panel for mange servers and lot of other things
+
+so when check on its run with lot of technologies
+
+dirsearch on the panel and saw misconfiguration that some endpoints is accessible without any login ok its cool find to report but still
+
+without any Privilege like edit , del , add etc..
+
+so i need to keep working to find something good
+
+i also try login with some default Credentials but not working also try to sing up but the register cant be without login using admin Credentials
+by check on some endpoints i found server Info with that info full name of the admin who create that
+so its take 5 min to find that employee repo on github
+
+so start dorking on employee repo for any password
+
+i try
+
+password
+passwd 
+pwd
+pass
+pw
+login
+found internal host and user and password github leak like these
+
+$host = ****
+$User = ****
+$pwd  = ****
+scanned the internal host for ports nothing open
+
+so i try to login use the username and the password and BooM 😎🥳 its work with Full Privilege
+
+after Login i can
+
+Full Access and Control
+add users
+del users
+Etc...
+also 1 stored XSS in these panel
+
+Org Name:
+ SHODAN, Crt.sh,securitytrails
+
+
+Save domains and ip to list to scan
+
+Send domains to Amass for subs
+
+Send Subs-list for live probe (httpx or httprobe)
+
+Also send Subs-list to Nmap for port scanning
+
+***Nmap i run it on VPS because take lot time
+
+nmap -sV -iL subdomains.txt -oN scaned-port.txt --script=vuln
+
+
+
+after that i start Looked for 403 subs and start Fuzzing to Find some Cool EndPoints
+you can use for that Dirserch , FFUF ,
+
+For me if i work on little subs i send that to Burp ===> Spider this Host ===> while Spider working
+I  visit github dorking for these sub domain "sub.domain.com" if here any link will move to Spider
+
+2 Visit Google site:sub.domain.com also if here any link will move to Spider
+
+3 Visit web.archive
+
+https://web.archive.org/cdx/search/cdx?url=*.sub.domain.com&fl=original&collapse=urlkey
+also if here any link will move to Spider
+
+
+
+Fuzz On Spider. To do that send the host to Intruder ===> add WordList ===> Start Attack
+
+you can also on Intruder give a Payload list and Start attack on some parameters SQL,SSTI,SSRF,LFI,XSS,Etc..
+any cool end do an active Scan
+
+add Parameters list for Param Miner also to check on hidden parameters on burp
+while all of this runs i dorking on Github for some finds
+
+
+MOBSF For Mobile App testing
+for easy install
+
+docker pull opensecurity/mobile-security-framework-mobsf
+===>
+docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+
+check the java files for Hardcoded Credentials

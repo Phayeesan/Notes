@@ -1,0 +1,20 @@
+webapp penetration testing
+
+websites are exposed to the internet and this makes it very vulnerable
+
+website are mainly made of js,html,css language
+and they are available for code injection vuln.
+most dangerous one is js code injectio or Xss
+hmtl is static, can only be used to change the webpage look
+js code injection can execute various function
+
+
+sql queries allows to interact with databases
+very critical vuln if an attacker can communicate with a database.. its known as sql injection
+
+
+HTTP REQUESTS AND RESPONSE
+Request: what we send a website to get a webpage
+response; response of our request, contains html code
+cache control; to determine if content of response should be stored
+

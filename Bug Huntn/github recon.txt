@@ -1,0 +1,39 @@
+github recon
+
+
+keywords
+APP_SECRET
+consumerkey
+JIRA_Password
+jdbc
+“authorization bearer”
+auth_key
+consumer_secret
+SECURITY-SIGNATURE
+X-API
+X-Paypal
+secret_key
+JWK/JWT
+SSO_LOGIN
+defaultEndpointsProtocol
+access_key
+accountKey
+AWS_Secret
+aws_secret_access_key
+rexis
+api_key
+
+
+
+“company.com” “dev” 
+● “dev.company.com” 
+● “company.com” API_key
+● “company.com” password
+● “api.company.com” authorization
+
+
+ Looked up the “umbrella” company name
+● Combine “umbrella_company” + asset_name + 
+“password”, and found below code:
+
+Looked for the: hostname+ internal + “auth-token”

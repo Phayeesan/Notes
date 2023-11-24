@@ -1,0 +1,12 @@
+Prerequisite
+
+    Note: before installing naabu, make sure to install libpcap library for packet capturing.
+
+To install libcap on Linux: sudo apt install -y libpcap-dev, on Mac: sudo brew install libpcap
+Installing Naabu
+
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+
+sudo ./naabu -p - -l livedomains.txt -nmap-cli 'nmap -sV -oG servicescan'
+
+best run on vps

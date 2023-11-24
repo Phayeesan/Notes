@@ -1,0 +1,6 @@
+information gathering on webapp & dirbtool
+most important part of attacking a website
+1)whatweb
+2)dirb--to discover directory==already installed in kali
+always indicate http or https
+you can always specify your wordlist

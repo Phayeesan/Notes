@@ -1,0 +1,21 @@
+Router exploit
+install routersploit
+
+apt-get install python3-pip
+git clone https://www.github.com/threat9/routersploit
+cd routersploit
+python3 -m pip install -r requirements.txt
+python3 rsf.py
+
+requires root
+ search scanner
+use autopwn scanner
+set options
+run
+
+
+
+router default credentials
+netstat -nr== router ip
+enter ip on address bar
+login to router

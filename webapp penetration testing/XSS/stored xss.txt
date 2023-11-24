@@ -1,0 +1,8 @@
+stored xss
+code get stored on server side
+affects everyone that visits the page
+try on comments pages
+name forms
+comment forms
+forum pages
+when you have htmlspecialchars filter(means all special characters are filtered) == no xss vuln

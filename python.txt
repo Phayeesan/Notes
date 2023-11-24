@@ -1,0 +1,85 @@
+download python intepreter-interpretes python code and run it on a machine
+normal python is cpython- a program written in C language to read
+python file and run it on a machine.
+
+jython-- translator writtn in java
+pypy- translator written in python
+ironpython-written for .NET program
+
+
+python code >>> interpreter-creates a bytecode>>>sends to cpython vm>>>
+interpretes to the machine
+
+terminal
+code editors
+IDEs
+Notebooks
+repl.it--replit.com--option
+glot.io
+python documentation
+
+there are 4 things to master for any programming language
+1)terms of the language e.g. statements, variable e.t.c
+2) learn about the language's data types... i.e. what sort of data can
+ a program hold?
+3)learn about performing actions
+4)learn the best practice of each language
+
+PYTHON DATA TYPES
+values in python
+
+data types are called:
+#classes -- custom data type
+#specialized == packages grab from modules or library
+
+fundamental data types
+int
+float
+bool
+str
+list
+tuple
+set
+dict
+None
+
+
+
+int-integer
+float-- floating point number, we have to make distinction in python 
+because a float takes up a lot more space in memory than an int.
+int and float data type are used for numbers
+**==power
+//==nearest int
+
+MODULO
+%= remainders
+
+
+Math functions
+ctrl / to comment every selected thing\
+
+round= round to nearest whole
+abs= return the absolute value of the argument
+**python3 math functions
+
+
+Developer fundamentals
+1) don't read the dictionary--understand what exists, what you can use
+
+OPERATOR PRECEDENCE
+means difference math operator have precedence over other
+**more like BODMAS
+
+** == power
+* / == multiplication and division
+
+COMPLEX DATA TYPE
+this is a third type number from int, float
+not often used
+
+every data is saved in binary
+bin == prints binary of an int
+print(bin(5)) == prints binary number of 5
+binary numbers are base 2 numbers
+print(int('0b101), 2) == prints the int of the binary

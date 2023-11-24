@@ -1,0 +1,129 @@
+first look for acquisitions from crunchbase.com for large scale bounty
+
+
+second, grab ASNs from bgp.he.net
+
+Scan asn with amass,,, amass intel --asn num
+
+do a reverse whois on seed domain/ whoxy.com
+you can automate using DOMLINK
+
+check tech with builtwith
+
+next thing is to grab the copyright text and find more subdomains using google dork "2023 indeed inc" -www.indeed.com
+
+use automation for shodan to find more subdomains
+
+
+SUBDOMAIN ENUM
+jslinked discovery using burp
+set scope-use advanced scope
+
+grab sitemap in burp, scan and crawl
+scan config -- fastest crawler, don't stop
+resource pool- a lot, 50
+
+after spidering for root domains
+select all hosts from sitemap
+go to engagement tools on pro only
+analyse targets
+save result as html
+copy the hosts from target section
+
+AUTOMATION to crawl js files
+gospider
+hakrawler
+
+subdomainizer- used in analyzing js.
+find subdomains referenced in js files.
+find cloud services referenced in js files.
+use shannon entropy formula to find potentially sensitive items in js.
+
+it will take a single page and scan for js files to analyze
+
+subscraper-- just for subdomains
+
+in burp
+go to engagements, click search, search .js
+copy all urls, parse to subdomainizer
+
+
+
+SUBDOMAIN SCRAPING
+sudo amass enum -d indeed.com
+sudo subfinder -d indeed.com -y
+sublist3r -d domain.com
+github-subdomains.py
+use httpprobe to check live subdomain
+
+pick a couple, paste to browser using openlist chrome extension and start hacking
+
+
+
+** can i takeover xyz-github
+
+subdomain bruteforcing
+amass enum -brute -d indeed.com -src
+amass enum -brute -d indeed.com -rf resolvers.txt -w bruteforce.list
+aisdnsbrute-- automation
+shuffledns -d indeed.com -w words.txt -r resolvers-excellent.txt
+worlist--all.txt,commonspeak2
+
+alt scanning
+altdns
+
+
+***port scan raw domains
+feed all your raw subdomains to dnmasscan
+take outpout of dmasscan, feed to nmap for service scan
+
+feed output og file of nmap to brutespray to find service credentials
+python brutespray.py --file nmap.gnmap --threads 5 --hosts 5 -c
+
+***masscan -iL ips-online.txt --rate 10000 -p1-65535 --only-open -oL masscan.out
+
+
+rustscan
+root scanning
+
+
+github dorking
+
+
+run httprobe and parse to screenshotting tool
+eyewitness, aquatone, httpscrennshot
+
+resume using ./EyeWitness.py --resume /home/hybrid/Desktop/bug-bounty/BUGCROWD/INDEED/eyewitness/ew.db
+
+
+subdomain takeover
+vuln scanner
+NUCLEI--- nuclei -l /livedomain.txt -t subdomain-takeover/* output
+
+gofingerprint
+sn1per
+
+use waybackurls by tomnomnom on livedomains.txt
+run meg on livedomains.txt for directory bruteforcing
+
+
+TOTAL RECON AUTOMATION
+C-TIER
+admiralgaust/bountyRecon github
+offhourscoding/recon
+Sambal0x/Recon-tools
+JoshuaMart/AutoRecon
+yourbuddy25/Hunter
+ultimate_recon.sh
+
+
+B-TIER
+LazyRecon
+OneForAll
+
+
+blind xss
+xss hunter
+
+sudomy -d target --html --all
+reconftw -d target -r

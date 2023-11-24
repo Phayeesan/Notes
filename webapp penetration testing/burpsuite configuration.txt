@@ -1,0 +1,59 @@
+burpsuite configuration
+a proxy tool that allows us to intercept and edit http request and responses
+
+how to configure burpsuite
+start burpesuite
+go to proxy
+click option
+under proxy listener, select ip addr
+then click edit.
+if no ip addr available
+click on add
+bind to port 8080
+bind to addr loopback only
+click ok
+go to firefox
+navigate to settings
+under general tab, scroll atw down to network settings
+choose manual proxy conf.
+enter localhost ip addr
+enter port
+click use proxy for all protocols
+click on ok
+then visit a website, you should get software is prvntng firefox
+this is a problem for https sites
+to fix this,
+go to http://burp
+download certificate
+go back to settings in firefox
+navigate to privacy & security
+atw down to certificate
+click view certificate
+import your downloaded certificate from the download directory
+select the 2 trust options and save
+go and refresh your page
+if not loading, the reason then is because intercept is on
+go back to burpsuite, you should have proxy turned orange
+click proxy, you should have intercept turned orange
+click intercept, you should see intercept is on and our http request
+
+but if page loads after importing certificate, then intercept is off
+
+OUR BURPSUITE PROXY IS READY TO USE
+
+
+
+Burpsuite professional extension
+
+decoder
+comparer
+extender
+projct options
+user options
+flow
+errors
+burpjslinkfinder
+hunt rmx
+burp bounty
+wsdler
+software vuln scanner

@@ -1,0 +1,12 @@
+1) asset discovery== process of looking for domains and subdomains
+subdomain tools == amass (intel)-- discover data on compny, asn, domain n ips
+amass enum == discover subdomains, assets, 
+subfinder == -domain -all -cx
+sublister
+
+2) content discovery == directory bruteforcer(feroxbuster, dirbust, gobuster,ffuf
+ffuf(-H)= -w path/all.txt -t -c -xc -mc 200,204, 301,307,401,405,400,302 -u /FUZZ
+dirsearch= slower but accurate
+
+
+3) proxy== burp or zap====  

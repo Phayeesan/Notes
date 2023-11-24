@@ -1,0 +1,16 @@
+picoctf
+Attestation Token:
+
+398851:blxpuv-b80cdf5906692255bb369a25f2811603
+
+
+API KEYS DOMAIN TO REGISTER
+AlienVault, BinaryEdge, BufferOver, BuiltWith, C99, Censys, Chaos, CIRCL, DNSDB, DNSTable, FacebookCT, GitHub, HackerOne, HackerTarget, NetworksDB, PassiveTotal, RapidDNS, Riddler, SecurityTrails, Shodan, SiteDossier, Spyse, Twitter, Umbrella, URLScan, VirusTotal, WhoisXML, ZETAlytics, Cloudflare
+
+Most of these API keys are free, but many only return limited results unless you have a paid API key. A free one is still better than none. So now you have your work cut out for you. For each of the services above you will need to find the website, then sign up and get an API key. This is a very time consuming and boring task but good recon does not come without sacrifice. You can do this.
+
+Once you’ve got all your API keys, stick them into the Amass config file. For an example config file see here: https://github.com/OWASP/Amass/blob/master/examples/config.ini
+
+Now, when you use amass, specify the config file with the -config parameter, like this:
+
+amass enum -d followhaklukeontwitter.com -config ./myconfigfile.ini

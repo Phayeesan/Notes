@@ -1,0 +1,84 @@
+Navigating through linux
+
+cd-choose directory(only works for dir)
+usage
+cd [dirname}
+cd .. = go back one dir
+ls-list
+pwd-print working directory
+
+create files using terminal
+touch file1-creates file1
+cat {filename}-writes out content of a file
+echo {content} > {filename}-write a content into a file
+nano- editor
+nano {fn}-creates and edit any file=== ctrl O-save/ ctrl X to exit
+python3 file.py-- run python programs
+
+create directory
+mkdir {dirname} - make directory
+mkdir -p {dirname}
+mv dir/* .
+mv {fn} [dirname} - move file
+cp-copy file1 file2
+cp {fn} /hm/user/dirname/newfilename = copy file to a directory
+rm fn- remove file
+rm dirname -r = remove directory
+rm * -r = removes evrything in kali
+du == disk usage == displays a list of all the files along with their sizes
+cat < - or cat ./-  == read out a dash filename
+files with spaces name
+to read it == cat 'files name'
+to open a directory with space name== cd dir/'my directory'
+sudo cp ‘my dir/my file’ files== to cp 'my file' from 'my dir' folder to files
+how to list file types
+file ./filename == lists file type
+file ./filename* == list wildcards filetypes
+find -type f -size ! -executable= to find a file with the size and non exec
+find / -user username -group groupname -size filesize 2>&1
+| grep -F -v Permission | grep -F -v directory
+
+METERPRETER --help
+sessions -i [session number] == start session
+guid == get user id for session
+
+
+grep
+-F = fixed strings
+-v = don't match stated string
+
+sort filename | uniq -c -u == use to grep a line of text that occurs only
+once in a file
+
+
+sudo ifconfig-get ip address and all the network interface corrresponding
+sudo su- root usr/admin
+exit
+
+sudo apt install tree
+tree / -- shows all of linux --46469 directories, 492813 files
+tree -L 1 / -- lists all the directories
+ctrl+D -- logout of terminal
+ctrl+alt+T -- start terminal
+
+ping won't work
+
+edit the /etc/resolv.conf = sudo nano /etc/resolv.conf
+add a new dns to the list == nameserver 8.8.8.8
+ctrl+O to save
+ctrl+X to exit
+reboot kali
+ping should work after reboot
+nc localhost [port]= connect to a port on same host
+
+
+
+2>&1 ==which writes the output from one file to the input of another file.
+2>&1 means that STDERR redirects to the target of STDOUT (which is the file dirlist)
+We are redirecting error output to standard output which in turn is being
+re-directed to file dirlist. Hence, both the output is written to file dirlist.
+
+The 3>&1 in your command line will create a new file descriptor
+and redirect it to 1 which is STDOUT .
+Now 1>&2 will redirect the filedescriptor 1 to STDERR
+and 2>&3 will redirect file descriptor 2 to 3 which is STDOUT

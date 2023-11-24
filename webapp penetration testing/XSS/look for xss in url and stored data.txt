@@ -1,0 +1,4 @@
+look for xss in url and stored data
+
+xss vulnerabilities usually involve applications not properly handling untrusted user data.
+file upload xss

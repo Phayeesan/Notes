@@ -1,0 +1,24 @@
+RUFUS SOFTWARE
+
+creating iso file for vulnerable versions of windows 10 machine
+go to rufus.ie
+download rufus software: use to create bootable usb drives with iso file
+also offers option to download previous OS of windows machine
+
+open the dropdown arrow next to SELECT button
+choose download, click on DOWNLOAD.
+wait for download iso image pop up
+choose the OS to download
+choose release choice
+choose edition
+choose architecture
+click on download or download using browser
+you should have your iso file ready after download
+
+
+NB: if dropdown arrow does not appear, try restart the program several times.
+Or go to application settings, change the check for update option, close and restart
+
+add to virtualbox
+install
+protip: turn off internet to create offline windows account if it pops up
